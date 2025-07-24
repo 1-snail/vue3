@@ -28,6 +28,7 @@
 <style scoped>
 
     .person{
+        margin: 20px;
     background-color: skyblue;
     width: 200px;
     box-shadow: 0 0 10px;
