@@ -2,13 +2,12 @@
     <!-- 写html -->
      <div class="app">
         <h1>你好啊</h1>
-        <Preson/>
+        <Person/>
      </div>
 </template>
 
 <script>
-import Preson from './components/Preson.vue';
-import Person from './components/Preson.vue'
+import Person from './components/Person.vue';
 
     // 写 js 或 ts
     export default{
