@@ -11,6 +11,7 @@
 
 <script>
 import Person from './components/Person.vue';
+import Person from './components/Person.vue';
 
     // 写 js 或 ts
     export default{
