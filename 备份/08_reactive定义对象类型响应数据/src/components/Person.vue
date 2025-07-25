@@ -16,29 +16,25 @@
 
 
 <script lang="ts" setup>
-    import { ref,reactive } from 'vue'
+    import { reactive } from 'vue'
 
-  let car = ref({brand:"奔驰",price:100})   // 用 ref 也可以创建对象的响应式数据
+  let car = reactive({brand:"奔驰",price:100})   // 用 reactive 创建对象的响应式数据
 
-  let games = ref([  
+  let games = reactive([  
     {id:"0001",names:"王者"},
     {id:"0002",names:"原神"},
     {id:"0003",names:"三国"}
   ])
 
-  
-  let obj = reactive({x:999})
-  console.log(car);
-  console.log(obj);
-  
-  
+  //console.log(car)
+
   function changePrice(){
-    car.value.price += 10
-    console.log(car.value.price)
+    car.price += 10
+    console.log(car.price)
   }
 
   function changeGameName(){
-    games.value[0].names="enen"
+    games[0].names="enen"
   }
 </script>
 
