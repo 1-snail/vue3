@@ -1,45 +1,30 @@
 <template>
-    <div class="person">
-        <h2>姓名:{{ name }}</h2>
-        <h2>年龄:{{ age }}</h2>
-       <button @click="changeName">修改姓名</button>
-       <button @click="changeAge">修改年龄</button>
-       <button @click="showTel">查看联系方式</button>
-    </div>
+   <div class="person">
+    <h2>车辆信息：一辆{{ car.brand }}车，价值{{ car.price }} w</h2>
+    <button @click="changePrice">修改汽车价格</button>
+   </div>
 </template>
 
-<script lang="ts">
-    export default{
-        name:"Person",
-       setup(){
 
-        // 数据
+<script lang="ts" setup>
+    import { ref,reactive } from 'vue'
 
-        let name = '张三'  // 此时的 name 不是响应式的
-        let age = 18
-        let tel = '1888'
+  let car = ref({brand:"奔驰",price:100})   // 用 ref 也可以创建对象的响应式数据
 
-        // 方法
-        function changeName(){
-            name= 'zhang-san'
-        }
-        function changeAge(){
-            age = 20
-        }
-        function showTel(){
-            alert(tel)
-        }
 
-        return {name,age,changeName,changeAge,showTel}
-       }
-    }
-    
+  
+  function changePrice(){
+    car.value.price += 10
+  
+
+  }
+
 </script>
 
 <style scoped>
 
     .person{
-        margin: 20px;
+    margin: 20px;
     background-color: skyblue;
     box-shadow: 0 0 10px;
     border-radius: 10px;
