@@ -1,61 +1,22 @@
 <template>
    <div class="person">
-    <h1>情况五：监视多个数据</h1>
-      <h2>姓名：{{ person.name }}</h2>
-      <h2>年龄：{{ person.age }}</h2>
-      <h2>车辆信息</h2>
-      <ul>
-        <li v-for="p in person.car"  :key="p">{{ p }}</li>
-      </ul>
-<br>
-      <button @click="changeName">修改名字</button>
-      <button @click="changeAge">修改年龄</button>
-      <button @click="changeFirstCar">修改第一辆车</button>
-      <button @click="changeSecondCar">修改第二辆车</button>
-      <button @click="changeCar">修改车信息</button>
-
+    <h2 ref="test">北京</h2>
+    <button @click="showH2">展示H2内容</button>
    </div>
 </template>
 
 
 <script lang="ts" setup>
-import { reactive, watch } from 'vue';
+import { reactive, ref, watch, watchEffect } from 'vue';
 
+// 创建一个test，用于存储 ref 标记的内容
+let test = ref()
 
-let person = reactive({
-  name:'zhangsan',
-  age:18,
-  car:{
-    c1:'奔驰',
-    c2:'宝马'
-  }
-})
-
- function changeName()
-  {
-    person.name += "~"
-  }
-  function  changeAge(){
-    person.age ++
-  }
-  function  changeFirstCar(){
-    person.car.c1 = '奥迪'
-  }
-  function  changeSecondCar(){
-    person.car.c2 = '大众'
-  }
-  function  changeCar(){
-    person.car = {c1:'雅迪',c2:"爱玛"}
-  }
-
+function showH2(){
+  console.log(document.getElementById('test'));
   
-  // 监视多个属性
-  // 此处的 newValue 是一个数组
-  watch([()=>person.car,()=>person.age],
-  (newValue)=>{
-    console.log('监视了person.car 和 person.age',newValue);
-  },{deep:true})
-
+}
+  
 
 </script>
 
