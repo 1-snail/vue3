@@ -6,7 +6,11 @@
 <script setup·lang="ts" ·name="About">
 </script>
 <style scoped>
+<<<<<<< HEAD
 .about {
+=======
+about {
+>>>>>>> bcf18f7dc160289281f9a16253a12b7c9d44ab5d
     display: flex;
     justify-content: center;
     align-items: center;
