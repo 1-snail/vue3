@@ -3,55 +3,24 @@
   
    <h2>当前sum： {{ sum }}</h2>
    <button @click="changeSum">点击 sum + 1</button>
+   <hr>
+   <img v-for="(dog,index) in dogList" :src="dog" :key="index"></img>
+   <br></br>
+   <button @click="addDog">增加一只狗</button>
    </div>
 </template>
 
 
 <script lang="ts" setup>
 
-import {onBeforeMount, onBeforeUnmount, onBeforeUpdate, onMounted, onUnmounted, onUpdated, ref} from 'vue'
 
-let sum = ref(0)
+import axios from 'axios';
 
-function changeSum(){
-  sum.value ++
-}
+import useDog from '@/hooks/useDog'
+import useSum from '@/hooks/useSum';
 
-console.log('创建'); // 写在setup 中默认创建
-
-// 组件的声明周期：创建、挂载、更新、卸载
-
-// 挂载前
-onBeforeMount(()=>{
-  console.log('挂载前');
-  
-})
-
-// 挂载后
-onMounted(()=>{
-  console.log('挂载后');
-  
-})
-
-onBeforeUpdate(()=>{
-  console.log('更新前');
-  
-})
-
-onUpdated(()=>{
-  console.log('更新后');
-  
-})
-
-onBeforeUnmount(()=>{
-  console.log('卸载前');
-  
-})
-
-onUnmounted(()=>{
-  console.log('卸载后');
-  
-})
+const {sum,changeSum} = useSum()
+const {dogList,addDog} = useDog()
 
 
 </script>
@@ -64,5 +33,9 @@ onUnmounted(()=>{
     box-shadow: 0 0 10px;
     border-radius: 10px;
     padding: 20px;
+}
+img{
+  height: 100px;
+  margin-right: 10px;
 }
 </style>
