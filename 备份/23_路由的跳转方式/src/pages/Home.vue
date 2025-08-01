@@ -6,17 +6,17 @@
 
 <script setup lang="ts" name="About">
 
-import { onMounted, onUnmounted } from 'vue';
+import { onMounted ,onUnmounted} from 'vue';
 
-onMounted(() => {
+onMounted(()=>{
     console.log('home 页面挂载');
-
+    
 })
 
 // 消失的页面其实是被卸载了
-onUnmounted(() => {
+onUnmounted(()=>{
     console.log('home 页面卸载');
-
+    
 })
 </script>
 

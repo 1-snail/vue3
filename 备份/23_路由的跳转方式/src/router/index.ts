@@ -7,7 +7,6 @@ import { createRouter ,createWebHashHistory,createWebHistory} from "vue-router";
 import Home from "@/pages/Home.vue";
 import News from "@/pages/News.vue";
 import About from "@/pages/About.vue";
-import Detail from "@/pages/Detail.vue";
 
 // 第二部： 创建路由器
 
@@ -38,21 +37,13 @@ const router = createRouter({
         {
             name:'xinwen',  //命名路由
             path:'/news',
-            component:News,
-            children:[    // 指定嵌套路由
-                {
-                    name:'xiangqing',
-                    path:'detail',    // 子级路由不需要写斜杠(/)
-                    component:Detail
-                }
-            ]
+            component:News
         },
         {
             name:'guanyu',  //命名路由
             path:'/about',
             component:About
         }
-
     ]
 })
 
