@@ -42,8 +42,16 @@ const router = createRouter({
             children:[    // 指定嵌套路由
                 {
                     name:'xiangqing',
+                    component:Detail,
+                    // 写法一：将路由收到所有的 params 参数作为 props 传给路由组件（这种写法只能和 params 配合）
+                    //props:true
+                    //path:'detail/:id/:title/:content',    // 子级路由不需要写斜杠(/)
+                    
+                    //写法二：函数式写法。自己决定将什么作为 props 给路由组件
                     path:'detail',    // 子级路由不需要写斜杠(/)
-                    component:Detail
+                    props(route){
+                        return route.query
+                    }
                 }
             ]
         },

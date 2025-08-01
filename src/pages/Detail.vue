@@ -1,19 +1,14 @@
 <template>
     <ul class="news-list">
-        <li>ID:  {{ query.id }}</li>
-        <li>标题：{{ query.title}}</li>
-        <li>内容：{{ query.content }}</li>
+        <li>ID:  {{ id }}</li>
+        <li>标题：{{ title}}</li>
+        <li>内容：{{ content }}</li>
     </ul>
 </template>
 
 <script setup lang="ts" name="About">
 
-import { toRefs } from 'vue';
-import { useRoute } from 'vue-router';
-
-let route = useRoute()
-let {query} = toRefs(route)
-
+defineProps(['id','title','content'])
 
 </script>
 <style scoped>

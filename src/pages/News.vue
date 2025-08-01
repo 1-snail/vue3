@@ -7,9 +7,30 @@
                 <!-- <RouterLink :to="`/news/detail?id=${news.id}&title=${news.title}&content=${news.content}`">{{ news.title }}</RouterLink> -->
 
                 <!-- 查询字符串第二种写法 -->
-                <RouterLink :to="{
+                <!-- <RouterLink :to="{
                     // path:'/news/detail',
                     name:'xiangqing',  // 通过命名跳转
+                    query:{
+                        id:news.id,
+                        title:news.title,
+                        content:news.content
+                    }
+
+                }">{{ news.title }}</RouterLink> -->
+
+                <!-- 通过params传递参数 
+                 只能传字符串，复杂对象需序列化
+                 传递的参数量必须和占位一样，或者在占位符上加 ? 
+                 -->
+                <RouterLink :to="{
+                    name:'xiangqing',  // 【只能】通过命名跳转
+                    // // 写法一：将路由收到所有的 params 参数作为 props 传给路由组件（这种写法只能和 params 配合）
+                    //  params:{
+                    //     id:news.id,
+                    //     title:news.title,
+                    //     content:news.content
+                    // },
+                    // //写法二：函数式写法。自己决定将什么作为 props 给路由组件
                     query:{
                         id:news.id,
                         title:news.title,
