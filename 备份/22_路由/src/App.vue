@@ -5,8 +5,7 @@
          <div class="navigate">
             <RouterLink active-class="active" to="/home">首页</RouterLink>
             <RouterLink active-class="active" to="/news">新闻</RouterLink>
-            <!-- to 的另一种写法  改写法可以传递 路径、参数、查询字符串等-->
-            <RouterLink active-class="active" :to="{path:'/about'}">关于</RouterLink>
+            <RouterLink active-class="active" to="/about">关于</RouterLink>
          </div>
          <div class="main-content">
             <RouterView></RouterView>
