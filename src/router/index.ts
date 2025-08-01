@@ -30,14 +30,17 @@ const router = createRouter({
             redirect: '/home'   // 增加重定向，指定到默认打开为 home
         },
         {
+            name:'zhuye',  //命名路由
             path:'/home',
             component:Home
         },
         {
+            name:'xinwen',  //命名路由
             path:'/news',
             component:News
         },
         {
+            name:'guanyu',  //命名路由
             path:'/about',
             component:About
         }

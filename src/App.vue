@@ -3,9 +3,13 @@
        <Header/>
         <!-- 导航去 -->
          <div class="navigate">
+            <!-- 1、字符串写法 -->
             <RouterLink active-class="active" to="/home">首页</RouterLink>
-            <RouterLink active-class="active" to="/news">新闻</RouterLink>
-            <!-- to 的另一种写法  改写法可以传递 路径、参数、查询字符串等-->
+            <!-- 2、对象写法 -->
+
+            <!-- 2.1 名字跳转， 用命名路由指定要跳转的地方 -->
+            <RouterLink active-class="active" :to="{name:'xinwen'}">新闻</RouterLink>
+            <!-- 2.2 路径跳转 -->
             <RouterLink active-class="active" :to="{path:'/about'}">关于</RouterLink>
          </div>
          <div class="main-content">
