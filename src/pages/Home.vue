@@ -6,6 +6,7 @@
 
 <script setup lang="ts" name="About">
 
+<<<<<<< HEAD
 import { onMounted ,onUnmounted} from 'vue';
 
 onMounted(()=>{
@@ -18,6 +19,8 @@ onUnmounted(()=>{
     console.log('home 页面卸载');
     
 })
+=======
+>>>>>>> 93ad26f887c19ada498cd280d4ad8d6c62be6fd8
 </script>
 
 <style scoped>
