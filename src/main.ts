@@ -1,14 +1,15 @@
-// 引入createApp 用于创建引用
 import { createApp } from "vue";
-// 引入 App 根组件
 import App from './App.vue'
-// 引入路由器
-import router from "./router";
+
+// 第一步：引入 pinia
+import { createPinia } from "pinia";
 
 
-// 创建应用
 const app = createApp(App)
-// 使用路由器
-app.use(router)
-// 挂载整个应用到app容器中
+
+//第二步：创建 pinia
+const pinia = createPinia()
+// 第三步：使用 pinia
+app.use(pinia)
+
 app.mount('#app')
