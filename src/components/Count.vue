@@ -14,11 +14,14 @@
 
 <script setup name="Count   " lang="ts">
 import { ref } from 'vue';
+<<<<<<< HEAD
 import { useCountStore } from '@/store/count';
 
 const countStore = useCountStore()
 console.log(countStore.sum);
 
+=======
+>>>>>>> 6f8ab331e2e03245958044fecc201dc09104f1e6
 
 
 let sum = ref(1)
