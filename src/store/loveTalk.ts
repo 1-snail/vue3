@@ -1,6 +1,19 @@
 import { defineStore } from "pinia";
-
+import { nanoid } from "nanoid";
+import axios from "axios";
 export const useTalkStore = defineStore('talk', {
+
+    actions:{
+       async getLoveTalk(){
+
+       // let {data:{content:title}} = await axios.get('https://api.uomg.com/api/rand.qinghua?format=json')
+        let {data:{content:title}} = await axios.get('/api/rand.qinghua?format=json')
+
+        let obj = {id:nanoid(),title}
+        this.talkList.push(obj)
+        }
+    },
+
     state() {
         return {
             talkList: [

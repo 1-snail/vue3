@@ -20,7 +20,7 @@ export const useCountStore = defineStore('count',{
 
     state(){
         return{
-            sum:6,
+            sum:1,
             school:'at111',
             address:'adress111'
 

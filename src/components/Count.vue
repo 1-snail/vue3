@@ -1,7 +1,7 @@
 <template>
     <div class="count">
-        <h2> 当前求和为 {{ countStore.sum }}</h2>
-        <h2>欢迎来到{{ countStore.school }},位于 {{ countStore.address }}</h2>
+        <h2> 当前求和为 {{ sum }}</h2>
+        <h2>欢迎来到{{ school }},位于 {{ address }}</h2>
         <br>
         <button @click="changeInfo">修改信息</button>
         <select v-model.number="n">
@@ -17,15 +17,21 @@
 </template>
 
 <script setup name="Count   " lang="ts">
-import { ref } from 'vue';
+import { ref, toRefs } from 'vue';
 import { useCountStore } from '@/store/count';
+import { storeToRefs } from 'pinia';
 
 const countStore = useCountStore()
 console.log(countStore.sum);
 
+// storeToRefs 只关注 countStore 中的数据
+const {sum,school,address} = storeToRefs(countStore)
+
+console.log("storeToRefs(countStore)",storeToRefs(countStore));
+// toRefs 将对象中所有的内容都包裹了
+console.log('toRefs(countStore)',toRefs(countStore));
 
 
-let sum = ref(1)
 let n = ref(1)
 
 function Add(){

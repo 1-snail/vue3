@@ -10,15 +10,9 @@
 
 <script setup name="LoveTalk" lang="ts">
 import { reactive } from 'vue';
-import axios from "axios";
-//npm install nanoid
-import { nanoid } from "nanoid";
-
 import {useTalkStore} from '@/store/loveTalk'
 
 const talkStore = useTalkStore()
-console.log(talkStore.talkList);
-
 
 let talkList = reactive([
     {id:'001',title:'今天你有点怪，哪里怪？怪好看的！'},
@@ -28,13 +22,7 @@ let talkList = reactive([
 
 
 async function getLoveTalk(){
-   //let result = await axios.get('https://api.uomg.com/api/rand.qinghua?format=json')
-   //let {data:{content}} = await axios.get('https://api.uomg.com/api/rand.qinghua?format=json')
-   let {data:{content:title}} = await axios.get('https://api.uomg.com/api/rand.qinghua?format=json')
-
-    let obj = {id:nanoid(),title}
-    talkList.push(obj)
-    
+    talkStore.getLoveTalk()
 }
 
 </script>
