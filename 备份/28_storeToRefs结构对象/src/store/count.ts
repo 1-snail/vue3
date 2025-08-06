@@ -25,17 +25,5 @@ export const useCountStore = defineStore('count',{
             address:'adress111'
 
         }
-    },
-    getters:{
-        // bigSum(state){
-        //     return state.sum * 10
-        // },
-        bigSum:state => state.sum *10 //不用 this 可以直接使用 lambda 表达式
-        , 
-        
-        upperSchool():string{  // :string 指定函数返回结果
-            return this.school.toUpperCase()  
-        }
     }
-
 })

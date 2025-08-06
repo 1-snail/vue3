@@ -1,8 +1,7 @@
 <template>
     <div class="count">
-        <h2> 当前求和为 {{ sum }},放到10倍后为{{ bigSum }}</h2>
+        <h2> 当前求和为 {{ sum }}</h2>
         <h2>欢迎来到{{ school }},位于 {{ address }}</h2>
-        <h2>大写学校 {{ upperSchool }}</h2>
         <br>
         <button @click="changeInfo">修改信息</button>
         <select v-model.number="n">
@@ -26,15 +25,12 @@ const countStore = useCountStore()
 console.log(countStore.sum);
 
 // storeToRefs 只关注 countStore 中的数据
-const {sum,school,address,bigSum,upperSchool} = storeToRefs(countStore)
+const {sum,school,address} = storeToRefs(countStore)
 
 console.log("storeToRefs(countStore)",storeToRefs(countStore));
 // toRefs 将对象中所有的内容都包裹了
 console.log('toRefs(countStore)',toRefs(countStore));
 
-countStore.$subscribe(()=>{
-    console.log('数据发生了变化');
-})
 
 let n = ref(1)
 
@@ -55,8 +51,8 @@ function changeInfo(){
     // $path 提供一个碎片
     countStore.$patch({
 
-        school:'changeSchool',
-        address:'changeAddress',
+        school:'修改后的学校',
+        address:'修改后的地址',
     })
 }
 
